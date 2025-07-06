@@ -22,7 +22,7 @@ async function deleteCustomer(req, res) {
   const customers = await customerModel.findByIdAndDelete(id);
   console.log(customers);
   res.status(200).json({
-    customers,
+    message: "Customer deleted successfully",
   });
 }
 
