@@ -14,4 +14,11 @@ app.use(express.json());
 
 app.use("/customer", customerRoute);
 
+// custom error handling middleware
+app.use((err, req, res, next) => {
+  console.log(err);
+  const { status = 500, message = "Something went wrong" } = err;
+  res.status(status).send(message);
+});
+
 app.listen(port, () => console.log(`Port start working on ${port}`));
