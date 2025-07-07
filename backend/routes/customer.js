@@ -1,9 +1,5 @@
 import express from "express";
-import {
-  addNewCustomer,
-  deleteCustomer,
-  getCustomers,
-} from "../controllers/customer.js";
+import {addNewCustomer,deleteCustomer,getCustomers,} from "../controllers/customer.js";
 import { wrapAsync } from "../utils/wrapAsync.js";
 const router = express.Router();
 
