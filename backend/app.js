@@ -4,10 +4,13 @@ import cors from "cors";
 import { customerRoute } from "./routes/customer.js";
 import { dbConnect } from "./configs/dbConnection.js";
 
-const port = 3000;
+const port = 5000;
 const app = express();
 const db = dbConnect();
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
